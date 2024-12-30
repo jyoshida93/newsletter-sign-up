@@ -1,0 +1,298 @@
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+    margin: 0;
+    z-index: 1;
+}
+
+body {
+    /* 3. Add accessible line-height */
+    line-height: 1.5;
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+    text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+    isolation: isolate;
+}
+
+:root {
+    --tomato: hsl(4, 100%, 67%);
+    --light-vermillion: rgba(255, 97, 85, 15%);
+    --dark-slate-grey: hsl(234, 29%, 20%);
+    --charcoal-grey: hsl(235, 18%, 26%);
+    --grey: hsl(231, 7%, 60%);
+    --white: hsl(0, 0%, 100%);
+    --margin-large: 2rem;
+    --margin-bottom-small: 1rem;
+    --padding-side: 1.5rem;
+    --desktop-heading-font-size: 3.5em;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--dark-slate-grey);
+    background-color: var(--dark-slate-grey);
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.page {
+    display: flex;
+    justify-content: center;
+}
+
+.page-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--white);
+    max-width: 375px;
+}
+
+.sign-up__img {
+    width: 100%;
+}
+
+.sign-up__header {
+    font-size: 2.5em;
+    color: var(--charcoal-grey);
+    margin-bottom: var(--margin-bottom-small);
+}
+
+.sign-up__description {
+    margin-bottom: var(--margin-bottom-small);
+    color: var(--charcoal-grey);
+}
+
+.sign-up__content {
+    padding: var(--margin-large) var(--padding-side);
+}
+
+.sign-up__description-list {
+    list-style-image: url('assets/images/icon-list.svg');
+    padding-left: 1.7rem;
+    margin-bottom: var(--margin-large);
+}
+
+.sign-up__list-item {
+    color: var(--charcoal-grey);
+    text-indent: -0.5rem;
+    padding-left: 0.5rem;
+}
+
+.sign-up__list-item:not(:last-child) {
+    margin-bottom: 0.625rem;
+}
+
+.list-item-container {
+    padding-left: 0.5rem;
+    vertical-align: top;
+}
+
+.form__email-label {
+    display: block;
+    color: var(--charcoal-grey);
+    margin-bottom: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.form__error {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: tomato;
+    display: none;
+}
+
+.form__error-tool-tip--visible {
+    display: block;
+}
+
+.form__input {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px var(--grey) solid;
+    color: var(--grey);
+    margin-bottom: 1.5rem;
+}
+
+
+.form__input--invalid {
+    border-color: red;
+    background-color: var(--light-vermillion);
+}
+
+
+.button {
+    width: 100%;
+    background-color: var(--dark-slate-grey);
+    color: var(--white);
+    border-radius: 0.5rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-image: linear-gradient(0deg, #FF6A3A, #FF527B);
+}
+
+.form__button-padding {
+    padding: 1.125rem 2.75rem 0.875rem 2.875rem;
+}
+
+.sign-up--invisible {
+    display: none;
+}
+
+.success-page__content {
+    margin: 9.3125rem var(--padding-side) var(--margin-large) var(--padding-side);
+}
+
+.success-page__image {
+    margin-bottom: 2.5rem;
+}
+
+.success-page__header {
+    font-size: 2.5rem;
+    line-height: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.success-page__confirmation-text {
+    margin-bottom: 16.4375rem;
+}
+
+.success-page__email {
+    font-weight: 800;
+}
+
+.success-page__button {
+    padding: 1.125rem 6rem 0.875rem 6rem;
+}
+
+.success-page--invisible {
+    display: none;
+}
+
+@media (min-width : 58.5rem) {
+    body {
+        background-color: var(--dark-slate-grey);
+    }
+
+    .page {
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .page-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--white);
+        max-width: 58rem;
+        border-radius: 2.25rem;
+        width: unset;
+    }
+
+    .sign-up {
+        margin-bottom: 0;
+    }
+
+    .sign-up--flex {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .sign-up__img-container {
+        width: 45%;
+        margin: 1.5rem 1.5rem 1.5rem 0;
+    }
+
+    .sign-up__content {
+        width: 55%;
+        padding: 4.8rem 4rem;
+    }
+
+    .sign-up__header {
+        font-size: var(--desktop-heading-font-size);
+        margin-bottom: var(--margin-bottom-small);
+    }
+
+    .sign-up__description {
+        margin-bottom: 1.5rem;
+        color: var(--charcoal-grey);
+    }
+
+    .success-page__content {
+        max-width: 23.5rem;
+        margin: 3rem 4rem 4rem 4rem;
+    }
+
+    .success-page__header {
+        font-size: var(--desktop-heading-font-size);
+    }
+
+    .success-page__confirmation-text {
+        margin-bottom: 2.5rem;
+    }
+}
